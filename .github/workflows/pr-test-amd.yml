@@ -44,6 +44,7 @@ jobs:
             --cap-add=SYS_PTRACE -e HF_TOKEN=${HF_TOKEN} --security-opt seccomp=unconfined \
             -w /sglang-checkout --name ci_sglang \
             lmsysorg/sglang:v0.4.5.post2-rocm630
+          docker exec ci_sglang rocminfo
 
       - name: Install dependencies
         run: |
